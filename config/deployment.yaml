@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-node
+spec:
+  selector:
+    matchLabels:
+      app: hello-node
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: hello-node
+    spec:
+      containers:
+      - name: hello-node
+        image: my-tag:latest
+        imagePullPolicy: Never
